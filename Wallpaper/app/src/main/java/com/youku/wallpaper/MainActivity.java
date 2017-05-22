@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.youku.magic_wallpaper.MagicWallpaperActivity;
 import com.youku.transparent_wallpaper.WallPaperActivity;
+import com.yt.camera_view.activity.CameraActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, MagicWallpaperActivity.class));
+            }
+        });
+
+        findViewById(R.id.camera_record).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -24,4 +24,11 @@
         android:layout_below="@id/trans"
         android:text="magic"/>
 
+    <Button
+        android:id="@+id/camera_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/magic"
+        android:text="录制"/>
+
 </RelativeLayout>

@@ -1,1 +1,1 @@
-include ':app', ':transparent-wallpaper', ':magic-wallpaper'
+include ':app', ':transparent-wallpaper', ':magic-wallpaper', ':camera-view'
