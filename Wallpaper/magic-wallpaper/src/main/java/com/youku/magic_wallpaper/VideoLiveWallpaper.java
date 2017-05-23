@@ -9,6 +9,7 @@ import android.content.IntentFilter;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.MediaPlayer;
+import android.os.Environment;
 import android.service.wallpaper.WallpaperService;
 import android.view.SurfaceHolder;
 
@@ -112,6 +113,8 @@ public class VideoLiveWallpaper extends WallpaperService {
                 AssetFileDescriptor fileDescriptor = assetMg.openFd("test1.mp4");
                 mMediaPlayer.setDataSource(fileDescriptor.getFileDescriptor(),
                         fileDescriptor.getStartOffset(), fileDescriptor.getLength());
+//                mMediaPlayer.setDataSource(Environment.getExternalStorageDirectory().getPath()+"/video_1495423902991.mp4");
+
                 mMediaPlayer.setLooping(true);
                 mMediaPlayer.setVolume(0, 0);
                 mMediaPlayer.prepare();

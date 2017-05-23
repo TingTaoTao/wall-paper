@@ -1,6 +1,8 @@
 package com.youku.transparent_wallpaper;
 
 import android.Manifest;
+import android.app.WallpaperManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -71,9 +73,15 @@ public class WallPaperActivity extends AppCompatActivity {
      * 选择壁纸
      */
     void startWallpaper() {
-        final Intent pickWallpaper = new Intent(Intent.ACTION_SET_WALLPAPER);
-        Intent chooser = Intent.createChooser(pickWallpaper, getString(R.string.choose_wallpaper));
-        startActivity(chooser);
+//        final Intent pickWallpaper = new Intent(Intent.ACTION_SET_WALLPAPER);
+//        Intent chooser = Intent.createChooser(pickWallpaper, getString(R.string.choose_wallpaper));
+//        startActivity(chooser);
+
+        //下面直接进入选择的图片
+        final Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
+        intent.putExtra(WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT,
+                new ComponentName(this, CameraLiveWallpaper.class));
+        startActivity(intent);
     }
 
     /**
